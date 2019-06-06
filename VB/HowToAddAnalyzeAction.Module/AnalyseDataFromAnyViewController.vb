@@ -23,7 +23,7 @@ Namespace HowToAddAnalyzeAction.Module
         End Sub
 
         Private Sub analyseDataAction_Execute(ByVal sender As Object, ByVal e As SimpleActionExecuteEventArgs) Handles analyseDataAction.Execute
-            Dim objectSpaceInternal As IObjectSpace = Application.CreateObjectSpace()
+            Dim objectSpaceInternal As IObjectSpace = Application.CreateObjectSpace(GetType(Analysis))
             Dim obj As Analysis = objectSpaceInternal.CreateObject(Of Analysis)()
             obj.DataType = View.ObjectTypeInfo.Type
             obj.Name = "Analysis: " & View.Caption & " " & Date.Now.ToString()

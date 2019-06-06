@@ -26,7 +26,7 @@ namespace HowToAddAnalyzeAction.Module {
 		}
 
 		private void analyseDataAction_Execute(object sender, SimpleActionExecuteEventArgs e) {
-			IObjectSpace objectSpaceInternal = Application.CreateObjectSpace();
+			IObjectSpace objectSpaceInternal = Application.CreateObjectSpace(typeof(Analysis));
 			Analysis obj = objectSpaceInternal.CreateObject<Analysis>();
 			obj.DataType = View.ObjectTypeInfo.Type;
 			obj.Name = "Analysis: " + View.Caption + " " + DateTime.Now.ToString();
